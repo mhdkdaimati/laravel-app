@@ -1,13 +1,11 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/hello', function (){
     return response('hello', 404);
 });
@@ -34,4 +32,21 @@ Route::get('post', function(){
     ]);
 });
     
-    
+Route::get('/', function () {
+    return view('listings',[
+        'wer'=>'wer',
+        'd'=>'d',
+        'list'=>[
+            ['id'=>'1','name'=>'name1'],
+            ['id'=>'2']
+        ],
+        'list2'=> Listing::allList()
+
+    ]);
+});
+//sigle listing
+Route::get('/listings/{id}',function($id){
+    return view('listing',
+    ['listing'=>Listing::findList($id)]);
+
+});

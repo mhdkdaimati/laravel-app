@@ -1,4 +1,4 @@
 <h1>single list</h1>
-     {{$listing}}
+     {{$listing['name']}}
 <br>
      

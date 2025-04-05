@@ -21,9 +21,9 @@
      <br>
 <h1>listing from model</h1>
      @foreach($list2 as $listing)
-     {{$listing['id']}}
-     <a href="/listings/{{$listing['id']}}">{{$listing['name']}}</a>
-    
+        {{$listing['id']}}
+        <br>
+        <a href="/listings/{{$listing['id']}}">{{$listing['name']}}</a>
         <br>
      @endforeach
      

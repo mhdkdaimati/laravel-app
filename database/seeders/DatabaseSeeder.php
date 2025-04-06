@@ -38,6 +38,15 @@ class DatabaseSeeder extends Seeder
             'website'=>'website',
             'description'=>'description'
         ]);
+        Listing::Create([
+            'title'=>'title3',
+            'tags'=>'tags',
+            'company'=>'company',
+            'location'=>'location',
+            'email'=>'mail@company.com',
+            'website'=>'website',
+            'description'=>'description'
+        ]);
 
 
     }

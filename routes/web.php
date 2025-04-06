@@ -41,12 +41,9 @@ Route::get('/', function () {
     ]);
 });
 //sigle listing
-Route::get('/listings/{id}',function($id){
-    return view('listing',[
-        'listing'=>Listings::find($id)
+Route::get('/listings/{listing}',function(Listing $listing){
 
-
-
-]);
-
+        return view('listing',[
+            'listing'=>$listing]);
+    
 });

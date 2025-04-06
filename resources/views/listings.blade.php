@@ -1,6 +1,7 @@
-
 @extends('layout')
 @section('content')
+@include('partials._hero')
+@include('partials._search')
 
 
 {{-- end items --}}
@@ -59,3 +60,4 @@
      @else
      <p>No posts. </p>
      @endunless
+     @endsection

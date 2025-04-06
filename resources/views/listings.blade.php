@@ -1,4 +1,3 @@
-<h1>listings</h1>
 
 {{-- wihout blade we use php tag --}}
  <?php foreach($list as $listing): ?>
@@ -20,10 +19,3 @@
      {{-- directive --}}
      <br>
 <h1>listing from model</h1>
-     @foreach($list2 as $listing)
-        {{$listing['id']}}
-        <br>
-        <a href="/listings/{{$listing['id']}}">{{$listing['name']}}</a>
-        <br>
-     @endforeach
-     

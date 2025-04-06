@@ -40,13 +40,11 @@ Route::get('/', function () {
             ['id'=>'1','name'=>'name1'],
             ['id'=>'2']
         ],
-        'list2'=> Listing::allList()
 
     ]);
 });
 //sigle listing
 Route::get('/listings/{id}',function($id){
-    return view('listing',
-    ['listing'=>Listing::findList($id)]);
+    return view('listing');
 
 });

@@ -1,28 +1,61 @@
 
-{{-- wihout blade we use php tag --}}
- <?php //foreach($list as $listing): ?>
-    <?php //echo $listing['id']?>
-    <?php //endforeach; ?>
-    
-    <?php //echo $wer ?>
 @extends('layout')
 @section('content')
 
-    <h1>listing from model</h1>
-      @unless (count($listings)==0)
+
+{{-- end items --}}
+     @unless (count($listings)==0)
           
       
      {{-- //but with blade we use curly brase --}}
      @foreach($listings as $listing)
-     <a href="/listings/{{$listing['id']}}">
-      {{$listing['title']}}
-     </a>
      
      <br>
+     <div class="bg-gray-50 border border-gray-200 rounded p-6">
+      <div class="flex">
+          <img
+              class="hidden w-48 mr-6 md:block"
+              src="{{asset('images/no-image.png')}}"
+              alt=""
+          />
+          <div>
+              <h3 class="text-2xl">
+                  <a href="/listings/{{$listing['id']}}">
+                     {{$listing['title']}}
+                  </a>
+               </h3>
+               <div class="text-xl font-bold mb-4">{{$listing['company']}}</div>
+               <div class="text-xl font-bold mb-4">{{$listing['description']}}</div>
+               <ul class="flex">
+                  <li
+                      class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                  >
+                      <a href="#">Laravel</a>
+                  </li>
+                  <li
+                      class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                  >
+                      <a href="#">API</a>
+                  </li>
+                  <li
+                      class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                  >
+                      <a href="#">Backend</a>
+                  </li>
+                  <li
+                      class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
+                  >
+                      <a href="#">Vue</a>
+                  </li>
+              </ul>
+              <div class="text-lg mt-4">
+                  <i class="fa-solid fa-location-dot"></i> {{$listing['location']}}
+              </div>
+          </div>
+      </div>
+  </div>
+
      @endforeach
      @else
-     <p>No. </p>
+     <p>No posts. </p>
      @endunless
-     {{-- {{$wer}} --}}
-
-     {{-- directive --}}
